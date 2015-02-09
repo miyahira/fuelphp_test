@@ -34,6 +34,7 @@ class Controller_Name extends Controller_Template
 			if ($val->run())
 			{
 				$name = Model_Name::forge(array(
+					'name' => Input::post('name'),
 				));
 
 				if ($name and $name->save())
@@ -73,6 +74,7 @@ class Controller_Name extends Controller_Template
 
 		if ($val->run())
 		{
+			$name->name = Input::post('name');
 
 			if ($name->save())
 			{
@@ -91,6 +93,7 @@ class Controller_Name extends Controller_Template
 		{
 			if (Input::method() == 'POST')
 			{
+				$name->name = $val->validated('name');
 
 				Session::set_flash('error', $val->error());
 			}

@@ -4,12 +4,14 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
+			<th>Name</th>
 			<th>&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
 <?php foreach ($names as $item): ?>		<tr>
 
+			<td><?php echo $item->name; ?></td>
 			<td>
 				<div class="btn-toolbar">
 					<div class="btn-group">

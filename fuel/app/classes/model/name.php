@@ -5,6 +5,7 @@ class Model_Name extends Model
 {
 	protected static $_properties = array(
 		'id',
+		'name',
 		'created_at',
 		'updated_at',
 	);
@@ -23,6 +24,7 @@ class Model_Name extends Model
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
+		$val->add_field('name', 'Name', 'required|max_length[255]');
 
 		return $val;
 	}
